@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { join } from "path";
 import ticketsRouter from "./routes/tickets";
 import authRouter from "./routes/auth";
 import { authMiddleware } from "./middleware/auth";
@@ -10,6 +11,9 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Serve local uploads directory
+app.use("/uploads", express.static(join(__dirname, "..", "uploads")));
 
 // Auth routes (no authentication required)
 app.use("/api/auth", authRouter);

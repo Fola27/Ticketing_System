@@ -46,6 +46,30 @@ export default function TicketTable() {
     }
   }
 
+  const statusCounts = tickets.reduce(
+    (acc, ticket) => {
+      const status = ticket.status?.toLowerCase() || 'other'
+      if (status.includes('open')) acc.open += 1
+      else if (status.includes('progress')) acc.inProgress += 1
+      else if (status.includes('closed') || status.includes('completed')) acc.completed += 1
+      else acc.other += 1
+      return acc
+    },
+    { open: 0, inProgress: 0, completed: 0, other: 0 }
+  )
+
+  const priorityCounts = tickets.reduce(
+    (acc, ticket) => {
+      const priority = ticket.priority?.toLowerCase() || 'other'
+      if (priority.includes('high') || priority.includes('critical')) acc.high += 1
+      else if (priority.includes('medium')) acc.medium += 1
+      else if (priority.includes('low')) acc.low += 1
+      else acc.other += 1
+      return acc
+    },
+    { high: 0, medium: 0, low: 0, other: 0 }
+  )
+
   useEffect(() => {
     load()
 
@@ -78,6 +102,25 @@ export default function TicketTable() {
           <div className="view-controls">
             <button className="view-btn active">All Items</button>
           </div>
+        </div>
+      </div>
+
+      <div className="ticket-metrics-grid">
+        <div className="ticket-metric-card metric-open">
+          <span>Open</span>
+          <strong>{statusCounts.open}</strong>
+        </div>
+        <div className="ticket-metric-card metric-progress">
+          <span>In Progress</span>
+          <strong>{statusCounts.inProgress}</strong>
+        </div>
+        <div className="ticket-metric-card metric-completed">
+          <span>Completed</span>
+          <strong>{statusCounts.completed}</strong>
+        </div>
+        <div className="ticket-metric-card metric-high">
+          <span>High Priority</span>
+          <strong>{priorityCounts.high}</strong>
         </div>
       </div>
 

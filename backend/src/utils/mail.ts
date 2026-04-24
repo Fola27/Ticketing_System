@@ -21,7 +21,6 @@ function getGraphClient() {
 
   const client = Client.initWithMiddleware({
     authProvider,
-    fetchOptions: { fetch },
   });
   return client;
 }

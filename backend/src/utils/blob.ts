@@ -1,23 +1,43 @@
 import { BlobServiceClient } from "@azure/storage-blob";
 import { v4 as uuidv4 } from "uuid";
+import { writeFileSync, mkdirSync } from "fs";
+import { join } from "path";
 
 const connectionString = process.env.AZURE_STORAGE_CONNECTION_STRING || "";
 const containerName = process.env.AZURE_STORAGE_CONTAINER || "tickets";
+const useLocalStorage = !connectionString;
 
-if (!connectionString) {
-  console.warn("AZURE_STORAGE_CONNECTION_STRING not set. Blob uploads will fail until configured.");
+// Local storage fallback for development
+const localStoragePath = join(__dirname, "..", "..", "uploads");
+
+if (useLocalStorage) {
+  console.log("✓ Using local file storage for uploads (Azure Blob Storage not configured)");
+  try {
+    mkdirSync(localStoragePath, { recursive: true });
+  } catch (err) {
+    console.warn("Failed to create local uploads directory:", err);
+  }
+} else {
+  console.log("✓ Using Azure Blob Storage for uploads");
 }
 
 export async function uploadBufferToBlob(buffer: Buffer, originalName: string, contentType?: string) {
-  if (!connectionString) throw new Error("AZURE_STORAGE_CONNECTION_STRING missing");
+  const ext = originalName.split('.').pop();
+  const blobName = `${Date.now()}-${uuidv4()}${ext ? '.' + ext : ''}`;
+
+  if (useLocalStorage) {
+    // Local file storage fallback
+    const filePath = join(localStoragePath, blobName);
+    writeFileSync(filePath, buffer);
+    return `/uploads/${blobName}`;
+  }
+
+  // Azure Blob Storage
   const blobService = BlobServiceClient.fromConnectionString(connectionString);
   const containerClient = blobService.getContainerClient(containerName);
   await containerClient.createIfNotExists();
 
-  const ext = originalName.split('.').pop();
-  const blobName = `${Date.now()}-${uuidv4()}${ext ? '.' + ext : ''}`;
   const blockClient = containerClient.getBlockBlobClient(blobName);
-
   const options: any = {};
   if (contentType) options.blobHTTPHeaders = { blobContentType: contentType };
 

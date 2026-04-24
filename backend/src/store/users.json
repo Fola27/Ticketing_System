@@ -4,5 +4,25 @@
     "email": "aojelade@gmail.com",
     "password": "$2a$10$CUAFTplTh2nPATZN6m5eb.9EC36T/BQYaLq0Kbyi6zHSsMUPNkBqm",
     "name": "Afolabi Ojelade"
+  },
+  {
+    "id": "1776173581972",
+    "email": "aojelade@updcplc.com",
+    "password": "$2a$10$m/RDS.p1rorrMSvZ8kqMxOGknEExR6M/d2GEwq6X.xVR4ahiDM0NK",
+    "name": "Afolabi Ojelade"
+  },
+  {
+    "id": "1776242700494",
+    "email": "admin@example.com",
+    "password": "$2a$10$x/Pt4ePY17kv5bFeNxdDfOR7bhrWZdMzd76dgKErCZZaVjDWJf5qS",
+    "name": "Admin User",
+    "role": "admin"
+  },
+  {
+    "id": "1776874963142",
+    "email": "admin@updcplc.com",
+    "password": "$2a$10$0i2Ln1BF5S8TJIMkKK8Vze1lAGUvhGo3S0UDZ7Aqik0Cl9KnKek1C",
+    "name": "UPDCADMIN",
+    "role": "admin"
   }
 ]

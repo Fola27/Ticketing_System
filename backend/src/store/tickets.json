@@ -1,14 +1,151 @@
 [
   {
+    "ticket_id": "cdf873e1-969a-40f7-afc3-5df8090aeda4",
+    "description": "Install and configure the required operating system and standard productivity tools.",
+    "priority": "Medium",
+    "reported_by": "aojelade@updcplc.com",
+    "tracker": "New",
+    "status": "Completed",
+    "assigned_to": "admin@example.com",
+    "reported_at": "2026-04-15T08:14:27.267Z",
+    "attachments": [],
+    "closed_at": "2026-04-15T08:45:54.028Z",
+    "assigned_username": "Admin User",
+    "status_history": [
+      {
+        "status": "In Progress",
+        "timestamp": "2026-04-15T08:45:43.911Z",
+        "updated_by": "admin@example.com"
+      },
+      {
+        "status": "Completed",
+        "timestamp": "2026-04-15T08:45:54.028Z",
+        "updated_by": "admin@example.com",
+        "resolution": "Installed Windows 11 Pro and configured Microsoft Office suite with user preferences"
+      }
+    ],
+    "escalation_level": "second-level",
+    "progress_level": "Completed",
+    "progress_history": [
+      {
+        "level": "high",
+        "timestamp": "2026-04-15T08:45:48.034Z",
+        "updated_by": "admin@example.com",
+        "reason": "Requires specialized technical expertise"
+      },
+      {
+        "level": "In-Progress",
+        "timestamp": "2026-04-23T15:27:53.206Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "Completed",
+        "timestamp": "2026-04-23T15:27:55.364Z",
+        "updated_by": "admin@updcplc.com"
+      }
+    ]
+  },
+  {
     "ticket_id": "25da40e0-5023-4e9e-91b6-4be9cdcef7a8",
     "description": "Dear team,\r\nKindly assist to resolve the login issue.",
     "priority": "Medium",
     "reported_by": "aojelade@gmail.com",
     "tracker": "New",
-    "status": "Open",
-    "assigned_to": null,
+    "status": "In Progress",
+    "assigned_to": "aojelade@updcplc.com",
     "reported_at": "2026-03-17T16:05:43.417Z",
     "attachments": [],
-    "closed_at": null
+    "closed_at": null,
+    "progress_history": [
+      {
+        "level": "medium",
+        "timestamp": "2026-04-22T16:24:05.642Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "high",
+        "timestamp": "2026-04-22T16:24:12.142Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "low",
+        "timestamp": "2026-04-23T08:47:02.445Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "medium",
+        "timestamp": "2026-04-23T12:16:39.685Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "high",
+        "timestamp": "2026-04-23T12:37:31.315Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "low",
+        "timestamp": "2026-04-23T12:37:33.775Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "high",
+        "timestamp": "2026-04-23T12:41:27.230Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "low",
+        "timestamp": "2026-04-23T12:52:14.693Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "medium",
+        "timestamp": "2026-04-23T12:52:17.815Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "In-Progress",
+        "timestamp": "2026-04-23T13:49:32.108Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "Completed",
+        "timestamp": "2026-04-23T13:49:35.068Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "In-Progress",
+        "timestamp": "2026-04-23T13:50:04.979Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "Open",
+        "timestamp": "2026-04-23T17:33:15.770Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "In-Progress",
+        "timestamp": "2026-04-23T18:34:21.039Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "Completed",
+        "timestamp": "2026-04-23T18:34:26.784Z",
+        "updated_by": "admin@updcplc.com"
+      },
+      {
+        "level": "Open",
+        "timestamp": "2026-04-23T18:34:37.610Z",
+        "updated_by": "admin@updcplc.com"
+      }
+    ],
+    "progress_level": "Open",
+    "assigned_username": "Afolabi",
+    "status_history": [
+      {
+        "status": "In Progress",
+        "timestamp": "2026-04-23T12:47:59.435Z",
+        "updated_by": "admin@updcplc.com"
+      }
+    ]
   }
 ]

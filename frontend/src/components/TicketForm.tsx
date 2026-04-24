@@ -1,7 +1,13 @@
-import React, { useState } from 'react'
+ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-export default function TicketForm({ reported_by }: { reported_by: string }) {
+interface TicketFormProps {
+  reported_by: string
+  quickPreset?: { description: string; priority: string } | null
+  onPresetApplied?: () => void
+}
+
+export default function TicketForm({ reported_by, quickPreset, onPresetApplied }: TicketFormProps) {
   const [description, setDescription] = useState('')
   const [priority, setPriority] = useState('Medium')
   const [files, setFiles] = useState<FileList | null>(null)
@@ -9,6 +15,14 @@ export default function TicketForm({ reported_by }: { reported_by: string }) {
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (quickPreset) {
+      setDescription(quickPreset.description)
+      setPriority(quickPreset.priority)
+      onPresetApplied?.()
+    }
+  }, [quickPreset, onPresetApplied])
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault()
